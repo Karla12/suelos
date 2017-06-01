@@ -1,0 +1,20 @@
+{
+    "vagrant": {
+        "url": "suelos.local",
+        "user": "ubuntu",
+        "group": "ubuntu",
+        "hosts": ["127.0.0.1:2222"],
+        "public_dir": "/home/ubuntu/public_www/",
+        "wpworkflow_dir": "/home/ubuntu/wordpress-workflow/",
+        "command_prefixes": [],
+        "title": "Suelos",
+        "admin_user": "admin",
+        "admin_password": "password",
+        "admin_email": "karlaevelyn098@gmail.com",
+        "dbname": "suelos",
+        "dbuser": "wordpress",
+        "dbpassword": "password",
+        "dbhost": "localhost",
+        "dbprefix": "s_"
+    }
+}
