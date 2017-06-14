@@ -1,72 +1,45 @@
-v2.0.9  - Fixed mobile menu issue ofter scrollto
+= 1.0.9 =
+* WP 4.6.1 Compatible.
 
-v2.0.8  - Fixed prefixing of scripts
+= 1.0.8 =
+* WP 4.6 compatible.
+* Updated font-awesome icons.
+* Added social links.
+* Fixed translation issues.
+* Removed unused css.
 
-v2.0.6  - Added prefixing to scripts and css
-        - Added jquery dependency to all dependent scripts
-        - Moved conditional scripts to wp_script_add_data model
-        - Wrapped update migration code in function
+= 1.0.7 =
+* Implemented Customizer API for Theme Options.
+* Updated Font Awesome Icons.
+* Fixed Featured Box link issue.
 
-v2.0.5  - Added inc and assets dirs
-        - Escaped all user data
-        - Updated readme.txt
-        - Fixed function prefixing
-        - Removed scrollto js in footer
-        - Updated enqueue of css and js
-        - Updated credit link format
-        - Migrated all settings to kirki
-        - Updated tags
-        - Updated licence
-        - Sanatized meta_box input
+= 1.0.6 =
+* Fixed theme name in editor-style.css.
 
-v2.0.4  - Fixed issue with menu on iphone6+
-        - Added better support for scrollto on form submits
-        
-v2.0.3  - Added centering classes
-        - Fixed issue with paginated frontpage
+= 1.0.5 =
+* Compatible upto 4.1 .
+* Added text-domain in style.css.
+* Added editor-style.css.
+* Added unminified version of jquery in option tree.
+* Removed unwanted code.
 
-v2.0.2  - Fix customizer UI issues
-        - Add customizer styles
+= 1.0.4 =
+* Fixed Internationalize text issue. 
 
-v2.0.1  - Fix nested zip in distribution archive
+= 1.0.3 =
+* Added new Screenshot.png file.
+* Added esc_html and esc_attr.
+* Internationalize all text and descriptions. 
 
-v2.0.0  - MAJOR UPDATE - Not compatible with 1.x
-        - Migrated entire theme options system to customizer using redux framework
-        - Added one-page features to frontpage
-        - Added scroll feature to menu
-        - Updated all images to CC0 compatability
-        - Added sticky menu feature
-        - Updated blog archive layout to provide better experiance at responsive breakpoints
+= 1.0.2 =
+* Added get_template_part and remove include.
+* Added new Screenshot.png file.
 
-v1.0.6  - Fixed theme panel font compat with https
-        - Fixed logo display issue at mobile
-        - Fixed sidebar layout issue
-        - Updated FontAwesome to 4.2.0
-        - Removed screenshot.jpg because it duplicates screenshot.png
-        - Removed fancybox from admin
-        - Added hide comment count on blog/archive if comments turned off
-        - Added hide comment count on singel if comments turned off
-        - Added option to set social media font color
-        - Added option to hide date on single post
-        - Updated default styles in options panel
-        - Updated color of blog date on blog/archive
+= 1.0.1 =
+* Added unminified version of jquery.
+* Removed unwanted code or files.
+* Added Attribution for Option tree.
+* Added Function prefix.
 
-v1.0.5  - Fixed stacking issue with posts and pages at mobile viewports
-        - Fixed undeclared function error on posts and pages
-        - Fixed alternate sidebar key issue
-        - Updated theme options panel
- 
-v1.0.4  - Remove check for register_nav_menu
-
-v1.0.3  - Move global content_width outside of conditional
-
-v1.0.2  - Fixed missing global var $content_width in after_setup_theme
-
-v1.0.1  - Added core color picker to theme options panel
-        - Fixed namespace issue with n_clear to simple_business_wp_clear
-        - Removed menu attribute from wp_nav_menu
-        - Remove scripts settings
-        - Updated Bebas font licence info in readme.txt
-        - Moved $content_width into after_setup_theme
-
-v1.0.0  - Initial Launch 
+= 1.0.0 =
+* Initial release

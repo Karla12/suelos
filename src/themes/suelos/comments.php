@@ -1,113 +1,52 @@
 <?php
-if (comments_open()) {
-    echo "<h2>";
-    _e('Comments', 'simple-business-wp');
-    echo "</h2>";
-}
-if (post_password_required()) {
-?>
-    <p class="nopassword"><?php _e('This post is password protected. Enter the password to view any comments.', 'simple-business-wp'); ?></p>
-    <?php
-    return;
-}
-if (have_comments()) {
-    $comments_by_type = separate_comments($comments);
-    if (!empty($comments_by_type['comment'])) {
-    ?>
-        <ol id="comments">
-            <?php wp_list_comments(array('type' => 'comment', 'callback' => 'simple_business_wp_comment', 'avatar_size' => 75, 'reply_text' => __('Reply', 'simple-business-wp'))); ?>
-        </ol>
-    <?php
-    }
-    ?>
+/**
+ * The template for displaying Comments.
+ * The area of the page that contains comments and the comment form.
+ */
 
-    <div class="navigation">
-        <div class="alignleft">
-    <?php previous_comments_link() ?>
-        </div>
-        <div class="alignright">
-    <?php next_comments_link() ?>
-        </div>
-    </div>
-
-    <?php
-    if (!empty($comments_by_type['pings'])) {
-    ?>
-        <ol id="pings">
-            <?php wp_list_comments(array('type' => 'pings', 'callback' => 'simple_business_wp_ping')); ?>
-        </ol>
-    <?php
-    }
-} else {
+/*
+ * If the current post is protected by a password and the visitor has not yet
+ * entered the password we will return early without loading the comments.
+ */
 ?>
-    <div class="nocomments">
-        <?php
-        if ('open' == $post->comment_status) {
-        ?>
-            <p><?php _e('Be the first to comment.', 'simple-business-wp'); ?></p>
-        <?php
-        } else {
-            // If comments are closed.
-        }
-        ?>
-    </div>
+
 <?php
-}
-if ( comments_open() ) {
-$commenter = wp_get_current_commenter();
-    $req = get_option('require_name_email');
-    if ($req) {
-        $req_echo = "aria-required='true'";
-    } else {
-        $req_echo = "";
-    }
-    
-    $fields = array(
-        'author' => '<div class="form-group">
-                        <label class="sr-only" for="author">' . __("Name", "simple-business-wp") . '</label>
-                        <div class="col-md-5">
-                            <input type="text" class="form-control" name="author" id="author" value="' . esc_attr($comment_author) . '" tabindex="1" placeholder="' . __('Name', 'simple-business-wp') . '" ' . $req_echo . ' />
-                        </div>
-                    </div>',
-        'email' => '<div class="form-group">
-                        <label class="sr-only" for="email">' . __('Email', 'simple-business-wp') . '</label>
-                        <div class="col-md-5">
-                            <input type="text" class="form-control" name="email" id="email" value="' . esc_attr($comment_author_email) . '" tabindex="2" placeholder="' . __('Email', 'simple-business-wp') . '" ' . $req_echo . ' />
-                        </div>
-                    </div>',
-        'url' => '<div class="form-group">
-                        <label class="sr-only" for="url">' .  __('Website', 'simple-business-wp') . '</label>
-                        <div class="col-md-5">
-                            <input type="text" class="form-control" name="url" id="url" value="' . esc_attr($comment_author_url) . '" tabindex="3" placeholder="' .  __('Website', 'simple-business-wp') . '" />
-                        </div>
-                    </div>'
-    );
-
-
-    $modified_defaults = array(
-        'fields' => apply_filters('comment_form_default_fields', $fields),
-        'comment_field' => '<div class="form-group">
-                    <label class="sr-only" for="comment">' .  __('Comment', 'simple-business-wp') . '</label>
-                    <div class="col-md-10">
-                        <textarea class="form-control input-lg" name="comment" id="comment" tabindex="4" placeholder="Type your comment here..."></textarea>
-                    </div>
-                </div>',
-        'must_log_in' => '<p class="must-log-in">' . sprintf(__('You must be <a href="%s">logged in</a> to post a comment.', 'simple-business-wp'), wp_login_url(apply_filters('the_permalink', get_permalink()))) . '</p>',
-        'logged_in_as' => '<p class="logged-in-as">' . sprintf(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'simple-business-wp'), admin_url('profile.php'), $user_identity, wp_logout_url(apply_filters('the_permalink', get_permalink()))) . '</p>',
-        'comment_notes_before' => '',
-        'comment_notes_after' => '<p class="form_allowed_tags">' . sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'simple-business-wp'), ' <code>' . allowed_tags() . '</code>') . '</p>',
-        'id_form' => 'commentform',
-        'id_submit' => 'submit',
-        'title_reply' => 'Leave a Reply',
-        'title_reply_to' => 'Leave a Reply to %s',
-        'cancel_reply_link' => 'Cancel reply',
-        'label_submit' => 'Submit',
-    );
-    ?>
-    <div id="respond" class="form-horizontal">
-        <?php comment_form($modified_defaults); ?>
-    </div>
-<?php 
-} 
+	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
+		die(__('Please do not load this page directly. Thanks!','eptima-lite'));
+	if ( post_password_required() ) { ?>
+   <p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.','eptima-lite'); ?></p>
+<?php
+		return;
+	}
 ?>
 
+<!-- You can start editing here. -->
+
+<div id="commentsbox">
+<?php if ( have_comments() ) : ?>
+	<h3 id="comments"><?php comments_number(__('No Comment','eptima-lite'), __('One Comment','eptima-lite'), __('% Comments','eptima-lite') );?><?php _e(' so far:','eptima-lite'); ?></h3>
+	<ol class="commentlist">
+		<?php wp_list_comments(); ?>
+	</ol>
+
+	<div class="comment-nav">
+		<div class="alignleft">
+			<?php previous_comments_link() ?>
+		</div>
+
+		<div class="alignright">
+			<?php next_comments_link() ?>
+		</div>
+	</div>
+
+<?php else : // this is displayed if there are no comments so far ?>
+	<?php if ( ! comments_open() && ! is_page() ) : ?>
+		<?php _e('Comments are closed.','eptima-lite'); ?>
+	<?php endif; ?>
+<?php endif; ?>
+<?php if ( comments_open() ) : ?>
+	<div id="comment-form">
+		<?php comment_form(); ?>
+	</div>
+<?php endif; // if you delete this the sky will fall on your head ?>
+</div>
