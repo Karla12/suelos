@@ -7,7 +7,7 @@
 
 <div id="sidebar_2" class="eptima_lite_widget">
 	<ul class="skeside">
-		<?php dynamic_sidebar( 'page-sidebar' ); ?>
+		<?php //dynamic_sidebar( 'page-sidebar' ); ?>
 	</ul>
 </div>
 <!-- #sidebar_2 .eptima_lite_widget -->

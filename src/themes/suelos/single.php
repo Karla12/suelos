@@ -26,7 +26,7 @@ get_header(); ?>
 	
 <div class="container post-wrap">
 	<div class="row-fluid">
-		<div id="container" class="span9">
+		<div id="container" class="span12">
 			<div id="content">  
 					<div class="post" id="post-<?php the_ID(); ?>">
 

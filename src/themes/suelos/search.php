@@ -22,7 +22,7 @@ get_header(); ?>
 	</div>
 	<div class="container post-wrap"> 
 		<div class="row-fluid">
-			<div id="container" class="span9">
+			<div id="container" class="span12">
 				<div id="content" role="main">
 					<?php if(have_posts()) : ?>
 					<?php while(have_posts()) : the_post(); ?>

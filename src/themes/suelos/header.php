@@ -24,9 +24,8 @@
 </head>
 <body <?php body_class(); ?> >
 	<div id="wrapper" class="skepage">
-
 	<div id="header_wrap">
-			<!--div id="header-top" class="clearfix">
+		<div id="header-top" class="clearfix">
 			<div class="container">      
 				<div class="row-fluid"> 
 
@@ -50,11 +49,10 @@
 						<!-- Social Links Section -->
 					<!--/div-->
 					<!-- Head Topbar Left Section Ends -->
-				<!--/div>
+				</div>
 			</div>
-		</div-->
+		</div>
 
-	
 		<div id="header" class="skehead-headernav clearfix">
 			<div class="glow">
 				<div id="skehead">

@@ -22,7 +22,7 @@
 		<div class="sections_inner_content">
 			<?php if ( $_featured_heading != '' ) { ?><h2 class="section_heading"><?php echo $_featured_heading; ?></h2><?php } ?>
 			<?php if ( $_featured_desc != '' ) { ?><div class="section_description"><?php echo $_featured_desc; ?></div><?php } ?>
-			<div class="botton_style"><span class="leftsquare"></span><span class="rightsquare"></span></div>
+			<div class="botton_style"><span class="leftsquare"></span><span class="rightsquare"></span></div><br><br>
 		</div>
 
 		<!-- row-fluid -->

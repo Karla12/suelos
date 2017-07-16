@@ -29,7 +29,7 @@ get_header();
 		<div class="row-fluid">
 			<div class="sections_inner_content">
 				<h2 class="section_heading"><?php echo esc_attr( get_theme_mod( 'home_blog_title', __('Latest News', 'eptima-lite') ) ); ?></h2>
-				<div class="botton_style"><span class="leftsquare"></span><span class="rightsquare"></span></div>
+				<div class="botton_style"><span class="leftsquare"></span><span class="rightsquare"></span></div><br><br><br>
 			</div>
 		</div>
 
@@ -50,7 +50,7 @@ get_header();
 							</a>
 						</h3>
 						<?php the_excerpt(); ?>
-						<div class="continue"><a href="<?php the_permalink(); ?>"><?php _e('Read More &rarr;','eptima-lite');?></a></div>		  
+						<div class="continue"><a href="<?php the_permalink(); ?>"><?php _e('Leer más &rarr;','eptima-lite');?></a></div>		  
 					</div>
 				<?php endwhile; ?>
 				<!-- end of the loop -->
