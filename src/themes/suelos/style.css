@@ -155,11 +155,11 @@ body.page-template-template-front-page-php #main{margin-top:0 !important;}
 .default-pagetemp #content .post{padding-bottom:50px;}
 .entry {  margin: 10px 0 15px;  }
 .entry-title a {  color: #000000;  text-decoration: none;  }
-.post-title{ margin-bottom: 14px;}
-.post-title a {font-size: 22px; font-weight: 500; letter-spacing: 0; line-height: 28px;} 	
+.post-title{ margin-bottom: 14px; text-align: center;}
+.post-title a {font-size: 18px; font-weight: 500; letter-spacing: 0; line-height: 28px;}
 .title a {  color: #000000;  display: block;  margin-bottom: 7px;  text-decoration: none; font-size:22px; line-height: 26px;  }
 .title a:hover {  color: #000;  }
-.skepost-meta {  color: #3c546b; font-size: 13px; margin-bottom: 15px; word-spacing: 2px } 	
+.skepost-meta {  color: #3c546b; font-size: 13px; margin-bottom: 15px; word-spacing: 2px }
 .skepost-meta span.author-name a { color: #3c546b; font-weight: 300; }
 .skepost-meta span.comments a { color: #3c546b; font-weight: 300; }
 .skepost-meta abbr {  border: none;  }
@@ -360,7 +360,7 @@ h1.home-section-title{font-weight: 400;text-align: center; display:inline-block;
 /* =Front Heading Section
 ---------------------------------------------------------------*/
 
-.eptima-lite-section h2.section_heading {font-family: "Great Vibes"; font-size: 45px; letter-spacing: 1px; line-height: normal; text-align: center;margin: 0 0 7px;}
+.eptima-lite-section h2.section_heading {font-family: "Arial"; font-size: 45px; letter-spacing: 1px; line-height: normal; text-align: center;margin: 0 0 7px;}
 .eptima-lite-section .section_description {text-align: center; }
 .botton_style {margin-top: 13px;position: relative; }
 .botton_style .leftsquare:before, .botton_style .rightsquare:after {border-top: 1px solid #bef243; content: ""; display: block; height: 1px; position: absolute; right: 31%; top: 50%; width: 18%; }

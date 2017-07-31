@@ -28,37 +28,72 @@ get_header();
 	<div class="container">
 		<div class="row-fluid">
 			<div class="sections_inner_content">
+			<div class="botton_style"><span class="leftsquare"></span><span class="rightsquare"></span></div><br>
 				<h2 class="section_heading"><?php echo esc_attr( get_theme_mod( 'home_blog_title', __('Latest News', 'eptima-lite') ) ); ?></h2>
 				<div class="botton_style"><span class="leftsquare"></span><span class="rightsquare"></span></div><br><br><br>
 			</div>
 		</div>
 
-		<div class="row-fluid front-blog-wrap">
-			<?php $eptima_lite_blogno = esc_attr( get_theme_mod('home_blog_num', '6' ) );
-				$eptima_lite_lite_latest_loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => $eptima_lite_blogno,'ignore_sticky_posts' => true ) );
+		<div class="row">
+			<?php $eptima_lite_blogno = esc_attr( get_theme_mod('home_blog_num', '20' ) );
+				$eptima_lite_lite_latest_loop = new WP_Query(
+					array( 'post_type' => 'post',
+						'posts_per_page' => $eptima_lite_blogno,
+						'0' => true,
+						'category_name' => 'mecanica-suelos' ) );
 			?>
 			<?php if ( $eptima_lite_lite_latest_loop->have_posts() ) : ?>
-
-			<!-- pagination here -->
-
-				<!-- the loop -->
-				<?php while ( $eptima_lite_lite_latest_loop->have_posts() ) : $eptima_lite_lite_latest_loop->the_post(); ?>
-					<div class="span4">
-						<h3 class="post-title">
+			<?php while ( $eptima_lite_lite_latest_loop->have_posts() ) : $eptima_lite_lite_latest_loop->the_post(); ?>
+					<div class="span3"><br><br>
+						<h3 class="post-title" style="text-transform: uppercase;">
 							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 								<?php the_title(); ?>
 							</a>
+							<div class="botton_style"><span class="leftsquare"></span><span class="rightsquare">
 						</h3>
-						<?php the_excerpt(); ?>
-						<div class="continue"><a href="<?php the_permalink(); ?>"><?php _e('Leer más &rarr;','eptima-lite');?></a></div>		  
+					</div>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
+			<?php else : ?>
+				<p><?php _e( 'Sorry, no posts matched your criteria.', 'eptima-lite' ); ?></p>
+			<?php endif; ?>
+		</div>
+		<br>
+		<br><br>
+		<div class="row-fluid">
+			<div class="sections_inner_content">
+				<div class="botton_style"><span class="leftsquare"></span><span class="rightsquare"></span></div><br>
+				<h2 class="section_heading">CONSTRUCCIÓN ESPECIALIZADA</h2>
+				<div class="botton_style"><span class="leftsquare"></span><span class="rightsquare"></span></div><br><br><br>
+			</div>
+		</div>
+
+		<div class="row">
+			<?php $posts_per_page = esc_attr( get_theme_mod('home_blog_num', '20' ) );
+				$cat2 = new WP_Query(
+					array( 'post_type' => 'post',
+						   'posts_per_page' => $posts_per_page,
+						   '0' => true,
+						   'category_name' => 'construccion-especializada'
+						)
+					);
+			?>
+			<?php if ( $cat2->have_posts() ) : ?>
+			<!-- pagination here -->
+				<!-- the loop -->
+				<?php while ( $cat2->have_posts() ) : $cat2->the_post(); ?>
+					<div class="span3"><br><br>
+						<h3 class="post-title" style="text-transform: uppercase;">
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+								<?php the_title(); ?>
+							</a>
+							<div class="botton_style"><span class="leftsquare"></span><span class="rightsquare">
+						</h3>
 					</div>
 				<?php endwhile; ?>
 				<!-- end of the loop -->
-
 				<!-- pagination here -->
-
 				<?php wp_reset_postdata(); ?>
-
 			<?php else : ?>
 				<p><?php _e( 'Sorry, no posts matched your criteria.', 'eptima-lite' ); ?></p>
 			<?php endif; ?>
