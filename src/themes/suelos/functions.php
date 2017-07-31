@@ -191,4 +191,14 @@ include_once('includes/skt-required-plugins.php');
 /* Upshell Pro Theme
 /*---------------------------------------------------------------------------*/
 require_once( trailingslashit( get_template_directory() ) . 'sketchthemes-upsell/class-customize.php' );
-?>
+
+/**
+ *
+ * Add options Sub Page - General, Home Page, Header, Footer
+ *
+ */
+if ( function_exists( 'acf_add_options_sub_page' ) ) {
+	acf_add_options_sub_page( 'General' );
+	acf_add_options_sub_page( 'Home Page' );
+	acf_add_options_sub_page( 'Page' );
+}
