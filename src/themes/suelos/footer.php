@@ -59,7 +59,6 @@
 	</div><!-- third_wrapper --> 
 </div>
 <!-- #footer -->
-	<a href="JavaScript:void(0);" title="<?php _e('Back To Top', 'eptima-lite'); ?>" id="backtop"></a>
-	<?php wp_footer(); ?>
+<?php wp_footer(); ?>
 </body>
 </html>

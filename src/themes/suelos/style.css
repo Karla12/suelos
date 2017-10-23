@@ -259,6 +259,7 @@ form input[type="submit"]:hover { background: none repeat scroll 0 0 #03386f; co
 #front-page-content img {max-width: 100%; }
 .skt-header-image{display: none; line-height: 0;}
 .home .skt-header-image{display: block;}
+/*.page-template .skt-header-image{display: block;}*/
 
 .front-video-bg {  width: 100%; }
 #featured-box{}

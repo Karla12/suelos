@@ -200,5 +200,18 @@ require_once( trailingslashit( get_template_directory() ) . 'sketchthemes-upsell
 if ( function_exists( 'acf_add_options_sub_page' ) ) {
 	acf_add_options_sub_page( 'General' );
 	acf_add_options_sub_page( 'Home Page' );
-	acf_add_options_sub_page( 'Page' );
+	acf_add_options_sub_page( 'Bussines' );
 }
+
+/**
+ *
+ *
+ * CSS MODAL BOOTSTRAP
+ *
+ *
+ */
+function cp_enqueue_scripts() {
+	wp_enqueue_style( "main", $amazon['amazon_path_s3'].'css/main.css' );
+	wp_enqueue_script( "modernizr", $amazon['amazon_path_s3'].'js/vendor/modernizr.js', array() , '', false );
+}
+add_action( 'wp_enqueue_scripts', 'cp_enqueue_scripts' );

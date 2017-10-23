@@ -27,7 +27,6 @@ get_header(); ?>
 					</div>
 				</div>
 	<!-- \\ BreadCrumb Section -->
-
 	<div class="page-content default-pagetemp">
 		<div class="container post-wrap">
 			<div class="row-fluid">
@@ -38,38 +37,9 @@ get_header(); ?>
 							<?php wp_link_pages(__('<p><strong>Pages:</strong> ','eptima-lite'), '</p>', __('number','eptima-lite')); ?>
 						</div>
 					<!-- skepost --> 
-					<?php edit_post_link('Edit', '', ''); ?>	
-					<?php if ( comments_open() || get_comments_number() ) {
-						//comments_template();
-						?>
-						<div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        
-        s.src = 'https://3by-com.disqus.com/embed.js';
-        
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<script id="dsq-count-scr" src="//3by-com.disqus.com/count.js" async></script>
-
-						<?php
-					} ?>
+					<?php edit_post_link('Edit', '', ''); ?>
 					</div>
 					<!-- post -->
-
 					<?php endwhile; ?>
 					<?php else :  ?>
 						<div class="post">
@@ -79,7 +49,6 @@ get_header(); ?>
 						<div class="clearfix"></div>
 				</div>
 				<!-- content -->
-
 				<!-- Sidebar -->
 				<div id="sidebar" class="span3">
 					<?php get_sidebar('page'); ?>

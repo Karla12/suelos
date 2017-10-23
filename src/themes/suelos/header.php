@@ -23,36 +23,8 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
-	<div id="wrapper" class="skepage">
+	<div id="wrapper">
 	<div id="header_wrap">
-		<div id="header-top" class="clearfix">
-			<div class="container">      
-				<div class="row-fluid"> 
-
-					<!-- Head Topbar Left Section Starts -->
-					<!-- div class="span5" -->
-						<!-- Social Links Section -->
-						<!--div class="social_icon">
-							<ul class="clearfix">
-								<?php if( get_theme_mod('_fbook_link', '#') != '' ){ ?><li class="fb-icon"><a target="_blank" href="<?php echo esc_url( get_theme_mod('_fbook_link') ); ?>"><span class="fa fa-facebook" title="Facebook"></span></a></li><?php } ?>
-								<?php if( get_theme_mod('_twitter_link', '#') != '' ){ ?><li class="tw-icon"><a target="_blank" href="<?php echo esc_url( get_theme_mod('_twitter_link') ); ?>"><span class="fa fa-twitter" title="Twitter"></span></a></li><?php } ?>
-								<?php if( get_theme_mod('_gplus_link', '#') != '' ){ ?><li class="gplus-icon"><a target="_blank" href="<?php echo esc_url( get_theme_mod('_gplus_link') ); ?>"><span class="fa fa-google-plus" title="Google Plus"></span></a></li><?php } ?>
-								<?php if( get_theme_mod('_pinterest_link', '#') != '' ){ ?><li class="pinterest-icon"><a target="_blank" href="<?php echo esc_url( get_theme_mod('_pinterest_link') ); ?>"><span class="fa fa-pinterest" title="Pinterest"></span></a></li><?php } ?>
-								<?php if( get_theme_mod('_linkedin_link', '#') != '' ){ ?><li class="linkedin-icon"><a target="_blank" href="<?php echo esc_url( get_theme_mod('_linkedin_link') ); ?>"><span class="fa fa-linkedin" title="Linkedin"></span></a></li><?php } ?>
-								<?php if( get_theme_mod('_flickr_link', '#') != '' ){ ?><li class="flickr-icon"><a target="_blank" href="<?php echo esc_url( get_theme_mod('_flickr_link') ); ?>"><span class="fa fa-flickr" title="Flickr"></span></a></li><?php } ?>
-								<?php if( get_theme_mod('_skype_link', '#') != '' ){ ?><li class="skype-icon"><a target="_blank" href="<?php echo esc_url( get_theme_mod('_skype_link') ); ?>"><span class="fa fa-skype" title="skype"></span></a></li><?php } ?>
-								<?php if( get_theme_mod('_instagram_link', '#') != '' ){ ?><li class="instagram-icon"><a target="_blank" href="<?php echo esc_url( get_theme_mod('_instagram_link') ); ?>"><span class="fa fa-instagram" title="instagram"></span></a></li><?php } ?>
-								<?php if( get_theme_mod('_vk_link', '#') != '' ){ ?><li class="vk-icon"><a target="_blank" href="<?php echo esc_url( get_theme_mod('_vk_link') ); ?>"><span class="fa fa-vk" title="vk"></span></a></li><?php } ?>
-								<?php if( get_theme_mod('_whatsapp_link', '#') != '' ){ ?><li class="whatsapp-icon"><a target="_blank" href="<?php echo esc_url( get_theme_mod('_whatsapp_link') ); ?>"><span class="fa fa-whatsapp" title="whatsapp"></span></a></li><?php } ?>
-							</ul>
-						</div-->
-						<!-- Social Links Section -->
-					<!--/div-->
-					<!-- Head Topbar Left Section Ends -->
-				</div>
-			</div>
-		</div>
-
 		<div id="header" class="skehead-headernav clearfix">
 			<div class="glow">
 				<div id="skehead">
@@ -101,13 +73,16 @@
 			<!-- glow --> 
 		</div>		
 		<div class="header-clone"></div>
-	</div>
-								
+	</div>				
 <!-- #header -->
 </div>
 <!-- #wrapper -->
 
 <!-- header image section -->
-<?php get_template_part( 'includes/front', 'header-image-section' ); ?>
+<?php
+if (is_home()) {
+	get_template_part( 'includes/front', 'header-image-section' ); 	
+}
+?>
 
 <div id="main" class="clearfix">
