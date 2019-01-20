@@ -58,8 +58,13 @@ get_header();
 				<p><?php _e( 'Sorry, no posts matched your criteria.', 'eptima-lite' ); ?></p>
 			<?php endif; ?>
 		</div>
-		<br>
-		<br><br>
+	</div>
+</div>
+
+<?php get_template_part( 'includes/front', 'parallax-section' ); ?>
+
+<div id="front-content-box" class="eptima-lite-section">
+	<div class="container">
 		<div class="row-fluid">
 			<div class="sections_inner_content">
 				<div class="botton_style"><span class="leftsquare"></span><span class="rightsquare"></span></div><br>
@@ -67,13 +72,11 @@ get_header();
 				<div class="botton_style"><span class="leftsquare"></span><span class="rightsquare"></span></div><br><br><br>
 			</div>
 		</div>
-
 		<div class="row">
 			<?php $posts_per_page = esc_attr( get_theme_mod('home_blog_num', '20' ) );
 				$cat2 = new WP_Query(
 					array( 'post_type' => 'post',
 						   'posts_per_page' => $posts_per_page,
-						   '0' => true,
 						   'category_name' => 'construccion-especializada'
 						)
 					);

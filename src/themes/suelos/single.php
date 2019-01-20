@@ -63,9 +63,6 @@ get_header(); ?>
 							<span class="nav-next"><?php next_post_link( __('%link &rarr;','eptima-lite')); ?></span> 
 						</div>
 						<div class="clearfix"></div>
-						<div class="comments-template">
-							<?php comments_template( '', true ); ?>
-						</div>
 					</div>
 				<!-- post -->
 				<?php endwhile; ?>
